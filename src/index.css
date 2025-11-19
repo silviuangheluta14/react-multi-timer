@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=DM+Sans:wght@400;700&display=swap');
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+  color: #2a1b16;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #FFF4E2 0%, transparent 60%),
+    radial-gradient(900px 600px at 110% 10%, #FFE2D1 0%, transparent 60%),
+    linear-gradient(160deg, #FFEEDB, #FFD8C1 45%, #FFC8B5 90%);
+}
+
+#root {
+  max-width: 50rem;
+  margin: 2rem auto;
+  padding: 2rem;
+  position: relative;
+  background: rgba(255, 245, 235, 0.35);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 24px;
+  box-shadow:
+    0 24px 48px rgba(174, 77, 46, 0.14),
+    0 8px 16px rgba(174, 77, 46, 0.10),
+    inset 0 1px 0 rgba(255,255,255,0.65);
+  overflow: hidden;
+}
+#root::before {
+  content: "";
+  position: absolute;
+  inset: -20% -20% auto -20%;
+  height: 55%;
+  background: radial-gradient(ellipse at top left,
+              rgba(255,255,255,0.55),
+              rgba(255,255,255,0.18) 45%,
+              rgba(255,255,255,0) 62%);
+  filter: blur(10px);
+  pointer-events: none;
+}
+#root::after {
+  content: "";
+  position: absolute;
+  right: -12%;
+  bottom: -14%;
+  width: 50%;
+  height: 42%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at bottom right,
+              rgba(255,255,255,0.16),
+              rgba(255,255,255,0) 62%);
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 40rem;
+  margin: 0 auto 1rem;
+  font-family: 'DM Sans', sans-serif;
+  color: #3a241d;
+}
+
+ul {
+  list-style: none;
+  max-width: 42rem;
+  margin: 2rem auto;
+  padding: 0;
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+}
+
+ul li {
+  position: relative;
+  padding: 1rem;
+  border-radius: 16px;
+  background: rgba(255, 244, 232, 0.38);
+  backdrop-filter: blur(14px) saturate(150%);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow:
+    0 16px 30px rgba(174, 77, 46, 0.12),
+    inset 0 1px 0 rgba(255,255,255,0.7);
+  color: #5a2e23;
+  overflow: hidden;
+}
+ul li::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 60%;
+  height: 50%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at top left,
+              rgba(255,255,255,0.55),
+              rgba(255,255,255,0) 70%);
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+ul h2 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0 0 .25rem;
+  color: #3a241d;
+}
+
+ul p {
+  text-align: center;
+  font-size: 1.05rem;
+  color: #6f4034;
+  margin: .25rem 0;
+}
+
+ul progress {
+  width: 100%;
+  height: 0.9rem;
+  border-radius: 999px;
+  margin: 0.75rem 0 0.5rem;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(174,77,46,0.18);
+}
+ul progress::-webkit-progress-bar {
+  background: rgba(255, 250, 245, 0.6);
+}
+ul progress::-webkit-progress-value {
+  background: linear-gradient(90deg, #FF9E6E, #FF7E6E 60%, #FFBA6B);
+  box-shadow: inset 0 -1px 0 rgba(255,255,255,0.6);
+}
+ul progress::-moz-progress-bar {
+  background: linear-gradient(90deg, #FF9E6E, #FF7E6E 60%, #FFBA6B);
+}
+
+label {
+  display: block;
+  font-size: 0.8rem;
+  color: #7c4a3d;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+  letter-spacing: .05em;
+}
+input {
+  display: block;
+  width: 100%;
+  font: inherit;
+  padding: 0.65rem 0.85rem;
+  border-radius: 12px;
+  border: 1px solid rgba(174, 77, 46, 0.28);
+  background: rgba(255, 252, 248, 0.8);
+  color: #2e140e;
+  outline: none;
+  transition: box-shadow .18s ease, border-color .18s ease, background .18s ease;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+input:focus {
+  border-color: #FF9E6E;
+  box-shadow: 0 0 0 6px rgba(255, 158, 110, 0.18);
+  background: rgba(255, 252, 248, 0.95);
+}
+
+.button {
+  font: inherit;
+  padding: 0.65rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 137, 97, 0.9);
+  background: linear-gradient(135deg, #FFB888, #FF8F66);
+  color: #2a1b16;
+  cursor: pointer;
+  font-weight: 800;
+  letter-spacing: .2px;
+  box-shadow:
+    0 10px 18px rgba(174, 77, 46, 0.18),
+    inset 0 1px 0 rgba(255,255,255,0.8);
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+}
+.button:hover,
+.button:active {
+  filter: brightness(0.98);
+  transform: translateY(-1px);
+  box-shadow:
+    0 14px 26px rgba(174, 77, 46, 0.22),
+    inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+/*  CHIP BUTTONS  */
+.button.button--chip,
+.button--chip {
+  padding: 0.25rem 0.55rem;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: rgba(255,255,255,0.8);
+  color: #2a1b16;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.8);
+}
+
+/* Pause */
+.button--chip.button--chip-pause {
+  background: linear-gradient(135deg, #e3caba, #fdd3bd);
+  border-color: rgba(174, 77, 46, 0.35);
+  color: #5a2e23;
+}
+
+/* Resume */
+.button--chip.button--chip-resume {
+  background: linear-gradient(135deg, #a9da16, #9fe6cd);
+  border-color: rgba(6, 94, 70, 0.35);
+  color: #0e3f2f;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+}
+
+/* Delete */
+.button--chip.button--chip-danger {
+  border-color: #e66a6a;
+  background: linear-gradient(135deg, #ffd1d1, #ffb2b2);
+  color: #7a1111;
+}
+
+/* Restart */
+.button--chip.button--chip-restart {
+  background: linear-gradient(135deg, #ffe2b6, #ffd29e);
+  border-color: rgba(255, 163, 59, 0.45);
+  color: #5a3d14;
+  box-shadow:
+    0 6px 12px rgba(255, 163, 59, 0.25),
+    inset 0 1px 0 rgba(255,255,255,0.8);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+}
+
+/* General hover/active feedback */
+.button--chip {
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+.button--chip:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow:
+    0 8px 16px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+.button--chip:active {
+  transform: scale(0.97);
+  filter: brightness(0.97);
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* Glow highlights */
+.button--chip.button--chip-resume:hover {
+  box-shadow:
+    0 8px 16px rgba(16, 185, 129, 0.28),
+    0 0 8px rgba(16, 185, 129, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+.button--chip.button--chip-danger:hover {
+  box-shadow:
+    0 8px 16px rgba(211, 75, 75, 0.30),
+    0 0 8px rgba(211, 75, 75, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+.button--chip.button--chip-restart:hover {
+  box-shadow:
+    0 10px 20px rgba(255, 163, 59, 0.28),
+    inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+/* Disabled */
+.button--chip:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  filter: grayscale(0.1) brightness(0.98);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.6);
+  transform: none !important;
+}
+
+/* Stop main button */
+.button--stop {
+  border-color: #d34b4b !important;
+  background: linear-gradient(135deg, #ff8a8a, #d34b4b) !important;
+  color: #fff !important;
+  box-shadow:
+    0 10px 18px rgba(211, 75, 75, 0.25),
+    inset 0 1px 0 rgba(255,255,255,0.5);
+}
+.button--stop:hover,
+.button--stop:active {
+  filter: brightness(1.03);
+  transform: translateY(-1px);
+  box-shadow:
+    0 14px 26px rgba(211, 75, 75, 0.32),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+.fallback {
+  margin: 0;
+  color: #836c41;
+  font-size: .95rem;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+/* Center Add Timer form  */
+#add-timer { 
+  text-align: center;            
+}
+
+#add-timer form {
+  display: grid;                   
+  justify-items: center;         
+  gap: 0.75rem;
+  margin: 0 auto;
+}
+
+#add-timer label {
+  text-align: center;          
+  width: 100%;
+}
+
+#add-timer input {
+  width: min(20rem, 100%);          
+  margin: 0 auto;                   
+  text-align: left;               
+}
+
+#add-timer .actions,           
+#add-timer button {
+  display: inline-flex;             
+  justify-content: center;
+  align-items: center;
+}
